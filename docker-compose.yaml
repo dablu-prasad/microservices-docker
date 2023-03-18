@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  user_server:
+    build: ./user
+    ports:
+      - '4004:4004'
+    links:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: tuser
+    depends_on:
+      - db
+  product_server:
+    build: ./product
+    ports:
+      - '4003:4003'
+    links:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: tuser
+    depends_on:
+      - db
+
+  db:
+    image: 'postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: 'linexc'
+      POSTGRES_USER: 'tuser'
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - /user/data:/var/lib/postgresql/data
+
+volumes:
+  data:
+  db:
