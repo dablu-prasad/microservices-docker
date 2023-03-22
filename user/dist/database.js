@@ -6,7 +6,7 @@ exports.dbConnection = new pg_1.Pool({
     user: "tuser",
     host: "db",
     password: "linexc",
-    // database: "user",
+    database: "userdb",
     port: 5432
 });
 //# sourceMappingURL=database.js.map

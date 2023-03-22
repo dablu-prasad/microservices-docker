@@ -59,6 +59,12 @@ psql -h db -U tuser
 password :linexc
 
 \c sales    (-- cmd to change database)
+\dt         (-- for all database table display)
+\d          (-- for check relations)
+select * from pg_extension;    (-- for see pg_extension)
+select * from pg_foreign_server;
+
+select * from productdb.public.products;
 
 --logs-----
 docker-compose logs

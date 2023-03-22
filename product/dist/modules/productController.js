@@ -27,7 +27,9 @@ class ProductController {
         });
         this.productList = (req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
+                console.log("GGGGGGGGGGGGGGGGGG");
                 const data = yield productService_1.default.productList();
+                console.log("data", data.rows);
                 return res.status(modelConstants_1.default.STANDARD.SUCCESS).send({
                     message: "Product list fetched successfully",
                     data: data.rows

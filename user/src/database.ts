@@ -4,7 +4,7 @@ export const dbConnection = new Pool({
     user: "tuser",
     host: "db",
     password: "linexc",
-    // database: "user",
+    database: "userdb",
     port: 5432
 }
 )

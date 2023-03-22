@@ -36,5 +36,4 @@ services:
       - /user/data:/var/lib/postgresql/data
 
 volumes:
-  data:
   db:

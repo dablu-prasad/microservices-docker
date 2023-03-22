@@ -20,7 +20,9 @@ export default class ProductController {
 
     public productList = async (req: any, res: any): Promise<Response> => {
         try {
+            console.log("GGGGGGGGGGGGGGGGGG")
             const data = await productService.productList()
+            console.log("data", data.rows)
             return res.status(responseConstants.STANDARD.SUCCESS).send({
                 message: "Product list fetched successfully",
                 data: data.rows
